@@ -1,8 +1,8 @@
-var Sequelize = require('sequelize')
-  , sequelize = new Sequelize('twitterjs', 'root', null, {
-    dialect: "mysql",
-    port:    3306
-  })
+var Sequelize = require('sequelize'),
+    sequelize = new Sequelize('twitterjs', 'root', null, {
+      dialect: "mysql",
+      port:    3306
+    });
 
 sequelize
   .authenticate()
@@ -14,11 +14,15 @@ sequelize
     }
   })
 
+
+
+
 var Tweet = require('./tweet.js')(sequelize);
 var User = require('./user.js')(sequelize);
 
 User.hasMany(Tweet);
 Tweet.belongsTo(User);
+
 
 module.exports = {
     User: User,
