@@ -42,12 +42,13 @@ code {
 }
 
 .tweetbox {
-  padding: 10px;
+  padding: 15px;
   margin: 5px;
   border-style: solid;
   border-color: #CCCCCC;
   border-radius: 5px;
   border-width: 1px;
+  max-width: 550px;
 }
 
 .tweetbox img {
@@ -60,4 +61,9 @@ code {
 }
 .content .by {
   font-weight: bold;
+}
+
+form {
+  margin: 20px;
+  margin-left: -20px;
 }

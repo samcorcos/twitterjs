@@ -9,6 +9,7 @@ INSERT INTO `users` (`id`, `name`, `pictureUrl`) VALUES (NULL, 'Fullstack', NULL
 INSERT INTO `users` (`id`, `name`, `pictureUrl`) VALUES (NULL, 'Class 111', NULL);
 
 INSERT INTO `tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is great! #fsalove');
+INSERT INTO `tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is sometimes great');
 INSERT INTO `tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '2', 'Fullstack academy is amazing');
 INSERT INTO `tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '3', 'Fullstack academy instructor is very cool');
 INSERT INTO `tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '4', 'Zeke is mindblowing');

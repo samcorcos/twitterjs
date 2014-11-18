@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 var debug = require('debug')('twitter-js');
 var app = require('../app');
-
 var store = require('../store');
 var swig = require('swig');
+var model = require("../models/");
 
 app.set('port', process.env.PORT || 3000);
 
@@ -15,10 +15,30 @@ io = require('socket.io').listen(server);
 
 io.on('connection', function(socket) {
 	socket.on('outgoing', function(tweet) {
-		// the world is our oyster
-		var newTweet = store.push(tweet.name, tweet.text);
-		console.log('the new tweet', newTweet);
-		var html = swig.renderFile(__dirname + '/../views/tweet.html', {tweet: newTweet});
-		io.sockets.emit('incoming', html);
-	})
+		model.User.findOrCreate({name: tweet.name}).success(function(user) {
+      user.Tweet.create({text: tweet.text, userId: tweet.name.id}).success(function(h){})
+
+      // var html = swig.renderFile(__dirname + '/../views/tweet.html', {tweet: Tweet});
+      // io.sockets.emit('incoming', html);
+
+    })
+
+    // the world is our oyster
+		// var newTweet = store.push(tweet.name, tweet.text);
+    // model.User.find({
+    //   where: {name: tweet.name}, include: [model.Tweet]
+    // }).success(function(user){
+    //   console.log("hell");
+    // })
+    //
+    //
+    // Tweet.create({
+    //
+    // }).success(function(x) {
+    //
+    // })
+    //
+		// console.log('the new tweet', newTweet);
+
+  })
 })
