@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize')
-  sequelize = new Sequelize('twitterjs', 'root', null, {
+  , sequelize = new Sequelize('twitterjs', 'root', null, {
     dialect: "mysql",
     port:    3306
   })
